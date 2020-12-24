@@ -26,11 +26,11 @@ function App() {
         fetch(BASE_URL)
             .then(res => res.json())
             .then(data =>{
-                const firstCurrency = Object.keys(data.rates)[0]
-                // const firstCurrency = Object.keys(data.rates)[26];
+                // const firstCurrency = Object.keys(data.rates)[0]
+                const firstCurrency = Object.keys(data.rates)[26];
                 setCurrencyOptions([data.base, ...Object.keys(data.rates)]);
-                // setFromCurrency(Object.keys(data.rates)[11]);
-                setFromCurrency(data.base)
+                setFromCurrency(Object.keys(data.rates)[11]);
+                // setFromCurrency(data.base)
                 setToCurrency(firstCurrency);
                 setExchangeRate(data.rates[firstCurrency])
             })
